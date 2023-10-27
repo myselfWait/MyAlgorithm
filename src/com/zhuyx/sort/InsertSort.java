@@ -4,6 +4,8 @@ import com.zhuyx.utils.Generator;
 
 import java.util.Arrays;
 
+import static com.zhuyx.utils.SortUtils.swap;
+
 public class InsertSort {
 
     public static void sort(int[] arr) {
@@ -16,14 +18,10 @@ public class InsertSort {
         }
     }
 
-    private static void swap(int[] arr, int j, int i) {
-        int temp = arr[j];
-        arr[j] = arr[i];
-        arr[i] = temp;
-    }
+
 
     public static void main(String[] args) {
-        int[] arr = Generator.getIntArray(100, 100);
+        int[] arr = Generator.getIntArray(100, 100,false);
         int[] cloneArr = Generator.deepClone(arr);
         sort(arr);
         Arrays.sort(cloneArr);
